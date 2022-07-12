@@ -201,10 +201,11 @@ if (isset($_SESSION['usuario'])) {
             $proc=$connect->prepare("CALL actualizar_usuario(?,?,?)");
             $proc->bind_param("sss", $_POST['usuario'],$_POST['pass'],$clave);
             $proc->execute();
-            echo "<meta http-equiv='Refresh' content='0;url=consultar-empleado.php'>";
         }catch(Exception $e){
             echo 'Excepcion capturada', $e->getMessage(),"\n";
         }
+        echo "<script>alert('Usuario actualizado correctamente');</script>";
+        echo "<meta http-equiv='Refresh' content='0;url=consultar-empleado.php'>";
     }
     ?>
     <?php

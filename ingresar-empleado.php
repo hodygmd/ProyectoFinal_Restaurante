@@ -220,6 +220,7 @@
                     }catch(Exception $e){
                         echo 'Excepcion capturada', $e->getMessage(),"\n";
                     }
+                    echo "<script>alert('Usuario agregado correctamente');</script>";
                 }
             }else{
                 try{
@@ -236,6 +237,7 @@
                 }catch(Exception $e){
                     echo 'Excepcion capturada', $e->getMessage(),"\n";
                 }
+                echo "<script>alert('Usuario agregado correctamente');</script>";
                 echo "<meta http-equiv='refresh' content='0;url=iniciar-sesion.php'>";
             }
         }

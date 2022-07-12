@@ -166,6 +166,7 @@ if (isset($_SESSION['usuario'])) {
             $proc = $connect->prepare("CALL insertar_producto(?,?,?,?,?,?,?,?)");
             $proc->bind_param("ssissiii", $clave, $_POST['nombreProducto'], $_POST['precio'], $_POST['descripcion'], $_POST['categoria'], $_POST['exis'], $_POST['smin'], $_POST['smax']);
             $proc->execute();
+            echo "<script>alert('Producto agregado correctamente');</script>";
         } catch (Exception $e) {
             echo 'Excepcion capturada', $e->getMessage(), "\n";
         }

@@ -126,6 +126,7 @@ if (isset($_SESSION['usuario'])) {
             $proc = $connect->prepare("CALL actualizar_categoria(?,?,?)");
             $proc->bind_param("sss", $_GET['clave'], $_POST['nombre'], $_POST['des']);
             $proc->execute();
+            echo "<script>alert('Categoria actualizada correctamente');</script>";
             echo "<meta http-equiv='Refresh' content='0;url=consultar-categoria.php'>";
         } catch (Exception $e) {
             echo 'Excepcion capturada', $e->getMessage(), "\n";

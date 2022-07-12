@@ -109,6 +109,7 @@ if (isset($_SESSION['usuario'])) {
                 $proc=$connect->prepare("CALL insertar_categoria(?,?)");
                 $proc->bind_param("ss", $_POST['nombre'], $_POST['desc']);
                 $proc->execute();
+                echo "<script>alert('Categoria agregada correctamente');</script>";
             }catch(Exception $e){
                 echo 'Excepcion capturada', $e->getMessage(),"\n";
             }

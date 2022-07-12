@@ -108,6 +108,7 @@ if (isset($_SESSION['usuario'])) {
                 $proc=$connect->prepare("CALL insertar_presentacion(?)");
                 $proc->bind_param("s", $_POST['desc']);
                 $proc->execute();
+                echo "<script>alert('Presentacion agregada correctamente');</script>";
             }catch(Exception $e){
                 echo 'Excepcion capturada', $e->getMessage(),"\n";
             }

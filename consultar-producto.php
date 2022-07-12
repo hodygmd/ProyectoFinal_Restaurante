@@ -93,9 +93,9 @@
                                 include('connect/connection-mysql.php');
                                 $consulta = "UPDATE producto SET status_producto=0 WHERE clave_producto='" . $_GET['clave'] . "'";
                                 if (mysqli_query($connect, $consulta)) {
-                                    echo "Producto eliminado";
+                                    echo "<script>alert('Producto eliminado');</script>";
                                 } else {
-                                    echo "Unos pedillos";
+                                    echo "<script>alert('Error al eliminar');</script>";
                                 }
                             }
                             ?>

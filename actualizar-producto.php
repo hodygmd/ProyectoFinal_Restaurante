@@ -167,6 +167,7 @@ if (isset($_SESSION['usuario'])) {
             $proc = $connect->prepare("CALL actualizar_producto(?,?,?,?,?,?,?,?)");
             $proc->bind_param("ssissiii", $_GET['clave'], $_POST['nombreProducto'], $_POST['precio'], $_POST['descripcion'], $_POST['categoria'], $_POST['exis'], $_POST['smin'], $_POST['smax']);
             $proc->execute();
+            echo "<script>alert('Producto actualizado correctamente');</script>";
             echo "<meta http-equiv='Refresh' content='0;url=consultar-producto.php'>";
         } catch (Exception $e) {
             echo 'Excepcion capturada', $e->getMessage(), "\n";

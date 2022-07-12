@@ -123,6 +123,7 @@ if (isset($_SESSION['usuario'])) {
             $proc = $connect->prepare("CALL actualizar_presentacion(?,?)");
             $proc->bind_param("ss", $_GET['clave'], $_POST['desc']);
             $proc->execute();
+            echo "<script>alert('Presentacion actualizada correctamente');</script>";
             echo "<meta http-equiv='Refresh' content='0;url=consultar-presentacion.php'>";
         } catch (Exception $e) {
             echo 'Excepcion capturada', $e->getMessage(), "\n";

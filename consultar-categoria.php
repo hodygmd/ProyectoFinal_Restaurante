@@ -96,9 +96,9 @@
                                 include('connect/connection-mysql.php');
                                 $consulta = "UPDATE categoria SET status_categoria=0 WHERE id_categoria='" . $_GET['clave'] . "'";
                                 if (mysqli_query($connect, $consulta)) {
-                                    echo "Producto eliminado";
+                                    echo "<script>alert('Presentacion eliminada');</script>";
                                 } else {
-                                    echo "Unos pedillos";
+                                    echo "<script>alert('Error al eliminar');</script>";
                                 }
                             }
                             ?>
